@@ -12,6 +12,15 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     export QT_VERSION=5.12.0
     export QT_PATH=/Users/$USER/Qt$QT_VERSION
 
+    # Install from homebrew
+    brew update
+
+    # Install other dependencies
+    if [[ ! -d dependencies ]]; then
+        mkdir -p dependencies
+    fi
+    pushd dependencies
+
    # Install Qt
     if [[ ! -d "$QT_PATH/${QT_VERSION_SHORT}/" ]]; then
         mkdir -p qt
