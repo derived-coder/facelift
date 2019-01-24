@@ -1,20 +1,20 @@
 function Controller() {
     installer.autoRejectMessageBoxes();
     installer.installationFinished.connect(function() {
-        gui.clickButton(buttons.NextButton);
+        gui.clickButton(buttons.NextButton, 2000);
     })
 }
 
 Controller.prototype.WelcomePageCallback = function() {
-    gui.clickButton(buttons.NextButton);
+    gui.clickButton(buttons.NextButton, 3000);
 }
 
 Controller.prototype.CredentialsPageCallback = function() {
-    gui.clickButton(buttons.NextButton);
+    gui.clickButton(buttons.NextButton, 2000);
 }
 
 Controller.prototype.IntroductionPageCallback = function() {
-    gui.clickButton(buttons.NextButton);
+    gui.clickButton(buttons.NextButton, 2000);
 }
 
 Controller.prototype.TargetDirectoryPageCallback = function() {
@@ -23,7 +23,7 @@ Controller.prototype.TargetDirectoryPageCallback = function() {
         widget.TargetDirectoryLineEdit.setText("/Users/travis/Qt5.12.0");
     }
 
-    gui.clickButton(buttons.NextButton);
+    gui.clickButton(buttons.NextButton, 2000);
 }
 
 Controller.prototype.ComponentSelectionPageCallback = function() {
@@ -33,20 +33,20 @@ Controller.prototype.ComponentSelectionPageCallback = function() {
         widget.selectComponent("qt.5120.clang_64");
     }
 
-    gui.clickButton(buttons.NextButton);
+    gui.clickButton(buttons.NextButton, 2000);
 }
 
 Controller.prototype.LicenseAgreementPageCallback = function() {
     gui.currentPageWidget().AcceptLicenseRadioButton.setChecked(true);
-    gui.clickButton(buttons.NextButton);
+    gui.clickButton(buttons.NextButton, 2000);
 }
 
 Controller.prototype.StartMenuDirectoryPageCallback = function() {
-    gui.clickButton(buttons.NextButton);
+    gui.clickButton(buttons.NextButton, 2000);
 }
 
 Controller.prototype.ReadyForInstallationPageCallback = function() {
-    gui.clickButton(buttons.NextButton);
+    gui.clickButton(buttons.NextButton, 2000);
 }
 
 Controller.prototype.FinishedPageCallback = function() {
@@ -54,5 +54,5 @@ Controller.prototype.FinishedPageCallback = function() {
     if (checkBoxForm && checkBoxForm.launchQtCreatorCheckBox) {
         checkBoxForm.launchQtCreatorCheckBox.checked = false;
     }
-    gui.clickButton(buttons.FinishButton);
+    gui.clickButton(buttons.FinishButton, 2000);
 }
