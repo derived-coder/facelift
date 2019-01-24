@@ -14,9 +14,6 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 
     # Install from homebrew
     brew update
-    # brew outdated cmake || brew upgrade cmake
-    brew install p7zip ninja gnu-tar
-    brew install lcov --HEAD
 
     # Install other dependencies
     if [[ ! -d dependencies ]]; then

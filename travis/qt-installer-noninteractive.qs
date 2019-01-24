@@ -30,7 +30,7 @@ Controller.prototype.ComponentSelectionPageCallback = function() {
     var widget = gui.currentPageWidget();
     if (widget) {
         widget.deselectAll();
-        widget.selectComponent("qt.591.clang_64");
+        widget.selectComponent("qt.5120.clang_64");
     }
 
     gui.clickButton(buttons.NextButton);
