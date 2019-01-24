@@ -6,7 +6,3 @@ if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
 fi
 
 
-# OS X 
-if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
-
-fi
