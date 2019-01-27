@@ -51,7 +51,7 @@ before_script: source ./travis/before_script.sh
 
 script:
 - cd build
-- echo $Qt5_DIR
+- python --version
 - echo $PATH
 - >
   cmake -DCMAKE_CXX_COMPILER=${COMPILER} -DCMAKE_PREFIX_PATH=$Qt5_DIR -DCMAKE_BUILD_TYPE=Release -DFACELIFT_DISABLE_DBUS_IPC=${DISABLE_IPC}
