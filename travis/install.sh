@@ -15,14 +15,17 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 
     # Install from homebrew
     brew update
+    
+    curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+    python3 get-pip.py
 
-    brew upgrade python
-    brew install python3
-    brew install pip
-    brew install pip3
+    #brew upgrade python
+    #brew install python3
+    #brew install pip
+    #brew install pip3
    
-    pip install --upgrade pip
-    pip install antlr4-python3-runtime six pyyaml click typing jinja2 watchdog path.py
+    pip3 install --upgrade pip
+    pip3 install antlr4-python3-runtime six pyyaml click typing jinja2 watchdog path.py
     python --version
     # Install other dependencies
     if [[ ! -d dependencies ]]; then
