@@ -20,12 +20,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     brew install python3
     brew install pip
     brew install pip3
-    #brew python
-    brew outdated pyenv || brew upgrade pyenv
-    # virtualenv doesn't work without pyenv knowledge. venv in Python 3.3
-    # doesn't provide Pip by default. So, use `pyenv-virtualenv <https://github.com/yyuu/pyenv-virtualenv/blob/master/README.md>`_.
-    brew install pyenv-virtualenv
-    pyenv install $PYTHON
+   
     pip install --upgrade pip
     pip install antlr4-python3-runtime six pyyaml click typing jinja2 watchdog path.py
     python --version
