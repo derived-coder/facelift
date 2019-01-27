@@ -26,7 +26,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
    
     pip3 install --upgrade pip
     pip3 install antlr4-python3-runtime six pyyaml click typing jinja2 watchdog path.py
-    python --version
+    python3 --version
     # Install other dependencies
     if [[ ! -d dependencies ]]; then
         mkdir -p dependencies
