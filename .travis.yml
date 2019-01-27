@@ -45,9 +45,9 @@ matrix:
   allow_failures:
   - env: COMPILER=g++-5 QT=512 DISABLE_IPC=ON
 
-install: ./travis/install.sh
+install: source ./travis/install.sh
 
-before_script: ./travis/before_script.sh
+before_script: source ./travis/before_script.sh
 
 script:
 - cd build
