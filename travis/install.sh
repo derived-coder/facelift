@@ -36,6 +36,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     fi
     export PATH=$QT_PATH/$QT_VERSION_SHORT/clang_64/bin:$PATH
     export Qt5_DIR=$QT_PATH/$QT_VERSION_SHORT/clang_64
+    ls $QT_PATH/$QT_VERSION_SHORT/clang_64/bin
 
     popd
 fi
