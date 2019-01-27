@@ -11,10 +11,19 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     export QT_VERSION_SHORT=5.12.0
     export QT_VERSION=5.12.0
     export QT_PATH=/Users/$USER/Qt$QT_VERSION
+    export PYTHON=3.7.2
 
     # Install from homebrew
     brew update
 
+    brew install python3
+    #brew python
+    brew outdated pyenv || brew upgrade pyenv
+    # virtualenv doesn't work without pyenv knowledge. venv in Python 3.3
+    # doesn't provide Pip by default. So, use `pyenv-virtualenv <https://github.com/yyuu/pyenv-virtualenv/blob/master/README.md>`_.
+    brew install pyenv-virtualenv
+    pyenv install $PYTHON
+    pip3 install antlr4-python3-runtime six pyyaml click typing jinja2 watchdog path.py
     # Install other dependencies
     if [[ ! -d dependencies ]]; then
         mkdir -p dependencies
