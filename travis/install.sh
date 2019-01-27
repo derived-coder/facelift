@@ -34,7 +34,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
         /Volumes/${QT_APP}/${QT_APP}.app/Contents/MacOS/${QT_APP} -v --script ../../travis/qt-installer-noninteractive.qs
         popd
     fi
-    export PATH=$PATH:$QT_PATH/$QT_VERSION_SHORT/clang_64/bin
+    export PATH=$QT_PATH/$QT_VERSION_SHORT/clang_64/bin:$PATH
     export Qt5_DIR=$QT_PATH/$QT_VERSION_SHORT/clang_64
 
     popd
