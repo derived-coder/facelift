@@ -15,7 +15,7 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
 
     # Install from homebrew
     brew update
-    brew install python3
+    brew upgrade python
     curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     python3 get-pip.py
 
