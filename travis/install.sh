@@ -2,6 +2,10 @@
 if [[ "${TRAVIS_OS_NAME}" == "linux" ]]; then
     sudo apt-get install python3 python3-pip python3-setuptools doxygen libgl1-mesa-dev
     sudo pip3 install antlr4-python3-runtime six pyyaml click typing jinja2 watchdog path.py
+    
+    QTDIR="/opt/qt${QT}"
+    PATH="$QTDIR/bin:$PATH"
+    source /opt/qt${QT}/bin/qt${QT}-env.sh
 fi
 
 
@@ -18,15 +22,11 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     brew upgrade python
     curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
     python3 get-pip.py
-
-    #brew upgrade python
-    #brew install python3
-    #brew install pip
-    #brew install pip3
-   
     pip3 install --upgrade pip
     pip3 install antlr4-python3-runtime six pyyaml click typing jinja2 watchdog path.py
     python3 --version
+    
+    brew install d-bus
     # Install other dependencies
     if [[ ! -d dependencies ]]; then
         mkdir -p dependencies
@@ -48,11 +48,6 @@ if [[ "$TRAVIS_OS_NAME" == "osx" ]]; then
     fi
     export PATH=$QT_PATH/$QT_VERSION_SHORT/clang_64/bin:$PATH
     export Qt5_DIR=$QT_PATH/$QT_VERSION_SHORT/clang_64/lib/cmake/Qt5
-    ls $QT_PATH/$QT_VERSION_SHORT/clang_64/bin
 
     popd
 fi
-
-cd ${TRAVIS_BUILD_DIR}
-mkdir build
-echo $PATH

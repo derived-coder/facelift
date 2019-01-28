@@ -47,13 +47,13 @@ matrix:
 
 install: source ./travis/install.sh
 
-before_script: source ./travis/before_script.sh
+before_script: 
+- cd ${TRAVIS_BUILD_DIR}
+- mkdir build
 
 script:
 - cd build
-- python --version
-- echo $PATH
 - >
-  cmake -DCMAKE_CXX_COMPILER=${COMPILER} -DCMAKE_PREFIX_PATH=$Qt5_DIR -DCMAKE_BUILD_TYPE=Release -DFACELIFT_DISABLE_DBUS_IPC=${DISABLE_IPC}
+  cmake -DCMAKE_CXX_COMPILER=${COMPILER} -DCMAKE_BUILD_TYPE=Release -DFACELIFT_DISABLE_DBUS_IPC=${DISABLE_IPC}
   -DFACELIFT_BUILD_TESTS=ON ..
 - make -j2 && dbus-launch make check
